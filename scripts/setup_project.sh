@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Setting up MotoBridge-AAOS..."
+echo "Ensure you have Android Studio Iguana or later installed."
+echo ""
+echo "This project requires the Android Automotive OS SDK system images for the emulator."
+echo "1. Open Android Studio -> SDK Manager -> SDK Tools"
+echo "2. Check 'Android Automotive OS SDK'"
+echo "3. Create a new Virtual Device -> Automotive -> Generic System Image"
+echo ""
+echo "To build from command line:"
+echo "./gradlew assembleDebug"

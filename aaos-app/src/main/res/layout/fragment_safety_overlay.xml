@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/safety_overlay_bg"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moving"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:drawablePadding="16dp"/>
+            
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Touch interactions disabled for safety"
+            android:textSize="24sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginTop="16dp"/>
+            
+    </LinearLayout>
+</FrameLayout>

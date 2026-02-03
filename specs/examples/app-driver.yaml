@@ -1,0 +1,10 @@
+spec_version: 1.0
+app:
+  package: com.example.driver
+  actions:
+    - OTP_INPUT
+    - TEXT_ENTRY
+    - MANUAL_ACTION
+  capabilities:
+    - navigation
+    - background_work

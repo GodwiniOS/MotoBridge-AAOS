@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MotoBridge Governance Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="backdrop"></div>
+  <main class="shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MotoBridge-AAOS / Governance Portal</p>
+        <h1>Compatibility validation for OEM-first safety constraints.</h1>
+        <p class="lede">
+          Register app metadata, validate against OEM profiles, and produce a
+          clear compatibility verdict. No APKs. No installs. No marketplace.
+        </p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card__title">Supported Outputs</div>
+        <ul class="hero-card__list">
+          <li>Safe</li>
+          <li>Restricted</li>
+          <li>Rejected</li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>App Spec</h2>
+            <p>Paste app metadata (JSON or simple YAML).</p>
+          </div>
+          <button class="ghost" id="loadApp">Load Example</button>
+        </div>
+        <textarea id="appSpec" spellcheck="false"></textarea>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>OEM Profile</h2>
+            <p>Paste OEM constraints (JSON or simple YAML).</p>
+          </div>
+          <button class="ghost" id="loadOem">Load Example</button>
+        </div>
+        <textarea id="oemSpec" spellcheck="false"></textarea>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button class="primary" id="evaluate">Evaluate Compatibility</button>
+      <div class="status" id="statusCard">
+        <div class="status-header">
+          <span class="status-badge" id="statusBadge">Waiting for input</span>
+          <h3 id="statusTitle">Provide app + OEM specs to validate.</h3>
+        </div>
+        <div class="status-body" id="statusBody">
+          <p>Results will list restrictions, violations, and assumptions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="details">
+      <div>
+        <h3>Portal Rules</h3>
+        <ul>
+          <li>No APK uploads or installs.</li>
+          <li>Validation is purely metadata + policy logic.</li>
+          <li>Outputs reflect OEM safety constraints first.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Disclaimer</h3>
+        <p>
+          This portal is reference tooling only. It does not grant approval,
+          distribution, or OEM certification. Real vehicle deployments must
+          implement OEM governance and legal review.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

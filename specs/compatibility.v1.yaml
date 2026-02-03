@@ -1,0 +1,19 @@
+# MotoBridge OEM Safety Contract (v1.0)
+# Versioned, human-readable policy for OEM safety enforcement.
+
+spec_version: 1.0
+
+oem:
+  name: sample-oem
+  restrictions:
+    when_moving:
+      block:
+        - OTP_INPUT
+        - TEXT_ENTRY
+        - MANUAL_ACTION
+    when_parked:
+      allow:
+        - OTP_INPUT
+        - TEXT_ENTRY
+  conditions:
+    ignition_required: true

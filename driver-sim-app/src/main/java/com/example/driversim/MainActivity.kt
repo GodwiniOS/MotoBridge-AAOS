@@ -6,6 +6,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.motobridge.core.RestrictedActionException
 import com.example.motobridge.core.RideState
 import kotlinx.coroutines.launch
 
@@ -37,8 +38,14 @@ class MainActivity : AppCompatActivity() {
                 is RideState.OfferReceived -> manager.acceptOffer()
                 is RideState.WaitingForOtp -> {
                     // Mobile can always input OTP
-                    if (manager.submitOtp("1234")) {
-                        Toast.makeText(this, "OTP Verified!", Toast.LENGTH_SHORT).show()
+                    try {
+                        if (manager.submitOtp("1234")) {
+                            Toast.makeText(this, "OTP Verified!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Invalid OTP", Toast.LENGTH_SHORT).show()
+                        }
+                    } catch (ex: RestrictedActionException) {
+                        Toast.makeText(this, "OTP blocked by policy", Toast.LENGTH_SHORT).show()
                     }
                 }
                 is RideState.RideAccepted -> {}
@@ -55,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                 btnAction.text = "Wait for Offer..."
             }
             is RideState.OfferReceived -> {
-                tvStatus.text = "New Request: ₹120"
+                tvStatus.text = "New Request: Rs 120"
                 btnAction.text = "Accept Ride"
             }
             is RideState.WaitingForOtp -> {

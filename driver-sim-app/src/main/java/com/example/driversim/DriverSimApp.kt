@@ -2,6 +2,7 @@ package com.example.driversim
 
 import android.app.Application
 import com.example.motobridge.core.RideManager
+import com.example.motobridge.policy.mobile.MobilePlatformPolicy
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

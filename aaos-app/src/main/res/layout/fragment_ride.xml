@@ -47,7 +47,7 @@
                 
              <TextView
                 android:id="@+id/tv_fare"
-                android:text="₹150 • 4.2 km"
+                android:text="Rs 150 - 4.2 km"
                 android:textSize="32sp"
                 android:textColor="@color/aaos_accent"
                 android:layout_marginTop="16dp"/>
@@ -63,6 +63,56 @@
                 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <!-- OTP Input (Visible only while waiting for OTP) -->
+    <LinearLayout
+        android:id="@+id/layout_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pickup OTP"
+            android:textSize="24sp"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/et_otp"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/card_bg"
+            android:hint="Enter OTP"
+            android:inputType="numberPassword"
+            android:padding="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_secondary"
+            android:textSize="26sp"/>
+
+        <TextView
+            android:id="@+id/tv_otp_restriction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Text input disabled while moving"
+            android:textColor="@color/aaos_accent"
+            android:textSize="18sp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_submit_otp"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="SUBMIT OTP"
+            android:textSize="26sp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/aaos_primary"/>
+
+    </LinearLayout>
 
     <!-- In-Ride Navigation Mock -->
     <LinearLayout

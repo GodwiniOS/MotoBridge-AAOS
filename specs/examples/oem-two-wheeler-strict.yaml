@@ -1,0 +1,11 @@
+spec_version: 1.0
+oem:
+  name: two-wheeler-strict
+  restrictions:
+    when_moving:
+      block:
+        - OTP_INPUT
+        - TEXT_ENTRY
+        - MANUAL_ACTION
+  conditions:
+    ignition_required: true

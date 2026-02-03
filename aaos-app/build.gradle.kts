@@ -37,7 +37,8 @@ android {
 
 dependencies {
     implementation(project(":vehicle"))
-    implementation(project(":motobridge-core"))
+    implementation(project(":core"))
+    implementation(project(":aaos-policy-adapter"))
     
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

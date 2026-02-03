@@ -14,7 +14,16 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MotoBridge-AAOS"
-include(":aaos-app")
+
+include(":core")
+project(":core").projectDir = file("motobridge-core")
+
+include(":driver-app-aaos")
+project(":driver-app-aaos").projectDir = file("aaos-app")
+
+include(":driver-app-mobile")
+project(":driver-app-mobile").projectDir = file("driver-sim-app")
+
+include(":aaos-policy-adapter")
+include(":mobile-policy-adapter")
 include(":vehicle")
-include(":motobridge-core")
-include(":driver-sim-app")
